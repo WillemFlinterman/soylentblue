@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "css-loader": "^3.4.2",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "sugarss": "^2.0.0",
+    "webpack": "^4.41.5"
+  },
+  "browserslist": [
+    ">0.2%"
+  ],
+  "devDependencies": {}
+}

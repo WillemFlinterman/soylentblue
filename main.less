@@ -1,0 +1,143 @@
+@import "reset.less";
+
+@a: #e7b680;
+@ah: rgb(248, 127, 106);
+@bg: #192331;
+@bg: #1d365a;
+@fg: #d6cead;
+@markerbg: #00f;
+@markerfg: #fff;
+
+
+@border: 1px solid rgba(#000, 0.05);
+
+body,
+html {
+  background: @bg;
+  color: @fg;
+  font-family: Helvetica, sans-serif;
+  // font-family: Georgia;
+  // font-family: times;
+  // font-family: 'Whyte Trial';
+  // font-family: 'Whyte Inktrap Trial';
+  font-weight: 200;
+  font-size: 30px;
+  
+  // letter-spacing: 0.035em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#container {
+  margin: 2em 0 14em;
+  overflow: auto;
+  p {
+    width: 24rem;
+    max-width: calc(100% - 2rem);
+    margin: 0 auto 1em auto;
+    line-height: 1.3em;
+  }
+  #head {
+    font-size: 1.5em;
+    height: 50vh;
+    display:flex;
+    align-items: center;
+    align-content: center;
+  }
+  #sub {
+    font-size: 0.75em;
+  }
+}
+
+
+#nieuwsbrief, #meerinfo, #adres {
+  text-align: center;
+  margin: 3em auto;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(#fff2c6, 0.5);
+}
+
+::selection {
+  background: @markerbg;
+  color: @markerfg;
+}
+
+.delay(@n, @i: 1) when (@i =< @n) {
+  &:nth-child(@{i}) {
+    animation-delay: (500ms + (@i * 100));
+  }
+
+  .delay(@n, (@i + 1));
+}
+
+.loop(@n, @i: 1) when (@i =< @n) {
+  &:nth-child(@{i}) {
+    // animation-delay: (100ms + (@i * 20));
+    right: 2rem * @i;
+  }
+
+  .loop(@n, (@i + 1));
+}
+
+* {
+  color: inherit;
+}
+
+label {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  font-weight: normal;
+  margin-bottom: 0;
+  line-height: 1em;
+  color: @a;
+  
+  &:hover {
+    text-decoration: underline;
+    color: @ah;
+  }
+}
+
+h1,
+h2,
+h3 {
+  // line-height: 1.5em;
+  margin: 0 auto;
+}
+
+h1 {
+  // font-weight: bold;
+}
+
+h2 {
+  // margin-bottom: 2rem;
+}
+
+h3 {
+  text-align: right;
+  font-weight: normal;
+  line-height: 1em;
+  float: right;
+
+  // margin-bottom: 2rem;
+}
+
+b {
+  // font-weight: bold;
+}
+
+i,
+em {
+  font-style: italic;
+}

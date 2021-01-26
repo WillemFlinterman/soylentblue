@@ -23,7 +23,7 @@ module.exports = {
         loader: "file-loader",
         options: {
           name(resourcePath, resourceQuery) {
-            return resourcePath
+            return '../' + resourcePath.split('soylentblue')[1]
           },
           emitFile: false,
         },

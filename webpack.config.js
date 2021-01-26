@@ -19,6 +19,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif|otf|woff|mp4)$/i,
+        loader: "file-loader",
+        options: {
+          name(resourcePath, resourceQuery) {
+            return resourcePath
+          },
+          emitFile: false,
+        },
+      },
+      {
         test: /\.less$/,
         use: [
           MiniCssExtractPlugin.loader,

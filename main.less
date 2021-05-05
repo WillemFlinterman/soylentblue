@@ -1,9 +1,9 @@
 @import "reset.less";
 
 @a: #e7b680;
-@ah: rgb(248, 127, 106);
-@bg: #192331;
+@ah: #f87f6a;
 @bg: #1d365a;
+@bg2: #192331;
 @fg: #d6cead;
 @markerbg: #00f;
 @markerfg: #fff;
@@ -34,7 +34,7 @@ html {
 }
 
 #container {
-  margin: 0 0 14em;
+  margin: 0 0 0;
   overflow: auto;
   p {
     width: 24rem;
@@ -54,9 +54,26 @@ html {
     background-position: center;
     margin-bottom: 2rem;
     position: relative;
+    svg {
+      position:absolute;
+      @s: 200px;
+      left:calc(50% - @s*0.5);
+      top:calc(50% - @s*0.5);
+      width:200px;
+      height:200px;
+      z-index:3;
+      transform: scale(2);
+      @media (max-width: 40rem) {
+        transform: scale(1.5);
+      }
+      /deep/ path {
+        fill: @fg;
+      }
+    }
     h1 {
       position: relative;
       z-index:2;
+      display:none;
     }
     &:after {
       content: "";
@@ -82,6 +99,31 @@ html {
   }
 }
 
+#footer {
+  text-align: center;
+  font-size: 14px;
+  padding-top: 2rem;
+  background: @bg2;
+  p {
+    text-align: center;
+  }
+  #partners {
+    padding-top: 3rem;
+    label {
+      display:block;
+      font-size: 1em;
+      text-transform: uppercase;
+    }
+    img {
+      display: inline-block;
+      width: 200px;
+      height: 80px;
+      object-fit: contain;
+      object-position: center;
+      margin: 50px;
+    }
+  }
+}
 
 #nieuwsbrief, #meerinfo, #adres {
   text-align: center;
